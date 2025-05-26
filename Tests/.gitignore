@@ -1,0 +1,10 @@
+# Ignorer les fichiers temporaires Python
+__pycache__/
+*.pyc
+
+# Ignorer le dossier de configuration VS Code
+.vscode/
+
+# Autres fichiers à ignorer
+*.log
+.env
