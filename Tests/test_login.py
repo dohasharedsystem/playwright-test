@@ -6,10 +6,10 @@ def test_login(page: Page):
 
     
     page.get_by_placeholder("Nom d'utilisateur").fill("yassine")
-    page.get_by_placeholder("Mot de passe").fill("yassine1")
+    page.locator("input[placeholder='Mot de passe']").first.fill("yassine1")
 
     
-    page.get_by_role("button", name="connexion").click()
+    page.get_by_role("button", name="Se connecter").click()
 
     
     expect(page.get_by_text("Gestion électronique des courriers")).to_be_visible()
