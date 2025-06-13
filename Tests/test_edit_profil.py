@@ -10,7 +10,7 @@ def test_edit_profil(page: Page):
 
     expect(page.get_by_text("Gestion électronique des courriers")).to_be_visible()
 
-    # Aller sur la page du profil
+    #la page du profil
     page.goto("http://courrier.sharedsystem.com/pages/profil")
 
     # Modifier les champs modifiables
@@ -18,9 +18,9 @@ def test_edit_profil(page: Page):
     page.locator("input[formcontrolname='tUserFirstName']").fill("yassine")
     page.locator("input[formcontrolname='tUserPhoneNumber']").fill("1211111111")  # 10 chiffres comme demandé
 
-    # Cliquer sur Enregistrer
+    #Enregistrer
     page.get_by_role("button", name="Enregistrer").click()
 
-    # Vérification après enregistrement (à ajuster selon le message de succès exact)
+    # Vérification après enregistrement
     expect(page.locator("div.p-toast-summary").first).to_be_visible()
     expect(page.locator("div.p-toast-detail").first).to_have_text("Informations personnelles modifiées avec succès !")
