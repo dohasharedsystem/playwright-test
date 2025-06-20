@@ -23,11 +23,11 @@ def test_ajout_utilisateur(page: Page):
 
     # Sélectionner un service
     page.get_by_role("combobox", name="Sélectionner le service").click()
-    page.get_by_role("option", name="service 1").click()  # adapter au libellé exact
+    page.get_by_role("option", name="service 1").click()  
 
     # Sélectionner un rôle
     page.get_by_role("combobox", name="Sélectionner le role").click()
-    page.get_by_role("option", name="Utilisateur").click()  # adapter au libellé exact
+    page.get_by_role("option", name="Utilisateur").click() 
 
     # Mot de passe
     page.locator('input[type="password"]').nth(0).fill("Test@1234")
@@ -36,5 +36,5 @@ def test_ajout_utilisateur(page: Page):
     # Enregistrer
     page.get_by_text("Enregistrer").click()
 
-    # Vérifier la réussite de l'ajout (adapter selon le message ou redirection)
+    # Vérifier la réussite de l'ajout 
     expect(page.get_by_text("Utilisateur ajouté avec succès")).to_be_visible()
